@@ -1,0 +1,25 @@
+def sum(array)
+ return 0 if array.length == 0
+ return array.reduce(:+)
+end
+
+def max_2_sum(array)
+ return 0 if array.length == 0
+ return array.pop if array.length == 1
+ return array.reduce(:+) if array.length == 2
+ b = array.sort
+ return b.pop + b.pop
+end
+
+# used hashmap which achieves in O(n) time complexity and O(n) space complexity
+def sum_to_n?(array, int)
+ return int == 0 if array.length == 0
+ return int == array[0] if array.length == 1
+ hashset = {}
+ array.each do |i|
+       return true if int - i >= 0 && hashset[int-i] != nil 
+       hashset[i] = true if int - i >= 0
+ end
+ return false
+end
+      

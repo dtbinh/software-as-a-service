@@ -1,0 +1,14 @@
+def hello(name)
+   return "Hello, " << name
+end
+
+def starts_with_consonant?(s)
+   return false if s.length == 0
+   return /^[aeiouAEIOU0-9\W]/.match(s) == nil
+end
+
+def binary_multiple_of_4?(s)
+   return false if /[^01]/.match(s) != nil
+   return false if s.length ==0
+   return /100$/.match(s) != nil
+end
